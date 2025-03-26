@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMIGRAÇÃO</title>
+</head>
+<body>
+    <h1>Sistema de Imigração do Brasil</h1>
+    pais: <input type="text" name="txtpais" id="txtpais"> 
+    <input type="button" value="Verificar" onclick="nacionalidade()">
+    <div id="nacionalidade">
+
+    </div>
+
+    <script>
+        function nacionalidade(){
+            var txtpais = document.querySelector('input#txtpais')
+            var nacionalidade = document.querySelector('div#nacionalidade')
+            var paisColocado = String(txtpais.value)
+            nacionalidade.innerHTML = `<p>Se seu país é <strong>${paisColocado}</strong>, você é Estrangeiro(a)</p>`
+            // nacionalidade.innerHTML += `<p>Você é Brasileiro(a)</p>`
+
+            if(paisColocado != 'Brasil') {
+                nacionalidade.innerHTML += `<p>Se seu pais é <strong>${paisColocado}</strong>, você é Estrangeiro(a).</p>`
+            } else{
+                nacionalidade.innerHTML = `<p>Você é Brasileiro(a)</p>`
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
